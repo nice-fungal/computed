@@ -1,14 +1,14 @@
 {
-  "name": "jsonata",
-  "version": "2.0.5",
+  "name": "computed.js",
+  "version": "2.0.5-1",
   "description": "JSON query and transformation language",
-  "module": "jsonata.js",
-  "main": "jsonata.js",
+  "module": "dist/jsonata.js",
+  "main": "dist/jsonata.js",
   "typings": "jsonata.d.ts",
   "homepage": "http://jsonata.org/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jsonata-js/jsonata.git"
+    "url": "https://github.com/nice-fungal/computed"
   },
   "scripts": {
     "pretest": "npm run lint",
@@ -16,7 +16,7 @@
     "test": "npm run mocha",
     "posttest": "npm run check-coverage && npm run browserify && npm run minify",
     "check-coverage": "nyc check-coverage --statements 99 --branches 99 --functions 99 --lines 99",
-    "browserify": "browserify src/jsonata.js --outfile jsonata.js --standalone jsonata",
+    "browserify": "browserify src/jsonata.js --outfile jsonata.js --standalone computed",
     "lint": "eslint src",
     "doc": "jsdoc --configure jsdoc.json .",
     "cover": "nyc _mocha",
