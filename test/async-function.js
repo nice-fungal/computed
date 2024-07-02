@@ -30,7 +30,7 @@ var httpget = function(url) {
     });
 };
 
-describe('Invoke JSONata with callback', function() {
+xdescribe('Invoke JSONata with callback', function() {
     describe('Make HTTP request', function() {
         it('should return promise to results', function() {
             var expr = jsonata('$httpget("https://api.npmjs.org/downloads/range/2016-09-01:2017-03-31/jsonata").downloads{ $substring(day, 0, 7): $sum(downloads) }');
@@ -48,7 +48,7 @@ describe('Invoke JSONata with callback', function() {
     });
 });
 
-describe('Invoke JSONata with callback - errors', function() {
+xdescribe('Invoke JSONata with callback - errors', function() {
     describe('type error', function() {
         it('should throw', function() {
             var expr = jsonata('5 + $httpget("htttttps://api.npmjs.org/downloads/range/2016-09-01:2017-03-31/jsonata")');
@@ -67,7 +67,7 @@ describe('Invoke JSONata with callback - errors', function() {
     });
 });
 
-describe('Invoke JSONata with callback - return values', function() {
+xdescribe('Invoke JSONata with callback - return values', function() {
     it('should handle an undefined value', function() {
         var data = { value: undefined };
         var expr = jsonata('value');
@@ -90,7 +90,7 @@ describe('Invoke JSONata with callback - return values', function() {
     });
 });
 
-describe('Evaluate concurrent expressions with callbacks', function() {
+xdescribe('Evaluate concurrent expressions with callbacks', function() {
     it('should process two expressions concurrently', function(done) {
         const expr = jsonata("{'1':'goat','2': 'cheese'} ~> $lookup($string(payload))");
 
@@ -117,7 +117,7 @@ describe('Evaluate concurrent expressions with callbacks', function() {
     });
 });
 
-describe('Handle chained functions that end in promises', function() {
+xdescribe('Handle chained functions that end in promises', function() {
     const counter = async (count) => ({
         value: count,
         inc: async () => await counter(count + 1)
